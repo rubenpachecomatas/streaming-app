@@ -24,7 +24,9 @@ export const KeyCard = ({ value }: KeyCardProps) => {
               disabled
               placeholder="Stream key"
             />
-            <CopyButton />
+            <CopyButton
+              value={value || ""}
+            />
           </div>
           <Button
             onClick={() => setShow((prev) => !prev)}
