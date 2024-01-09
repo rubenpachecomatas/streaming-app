@@ -20,7 +20,7 @@ interface BioModalProps {
 }
 
 export const BioModal = ({ initialValue }: BioModalProps) => {
-  const closeRef = useRef<ElementRef<"button">>();
+  const closeRef = useRef<ElementRef<"button">>(null);
 
   const [isPending, startTransition] = useTransition();
   const [value, setValue] = useState(initialValue || "");
@@ -58,7 +58,7 @@ export const BioModal = ({ initialValue }: BioModalProps) => {
             className="resize-none"
           />
           <div className="flex justify-between">
-            <DialogClose ref={closeRef}>
+            <DialogClose ref={closeRef} asChild>
               <Button type="button" variant="ghost">
                 Cancel
               </Button>
